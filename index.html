@@ -19,6 +19,7 @@
 	<style>
 	.navbar{
 	padding-top: 10px;
+	padding-bottom: 10px;
 	}
 	.navbar-header{
 	padding-bottom: 10px;
@@ -27,7 +28,6 @@
 	margin-top: 20px;
 	font-size: 18px;
 	font-weight: bold;
-	margin-right: 30px;
 	}
 	.login{
 	text-align:center;
@@ -92,11 +92,14 @@
 	color: #333333;
 	}
 	.yunduo{
-	margin-left:-30px;
-	margin-bottom:-70px;
+	margin-left: -40px;
+	margin-bottom: -70px;
 	}
    .description{
-   padding:30px 60px; 
+	padding-top: 30px;
+	padding-right: 60px;
+	padding-left: 60px;
+	padding-bottom: 30px;
    }
    .ds-header{
    margin-top:30px;
@@ -114,15 +117,18 @@
 	margin-bottom: auto;
    }
    .contact{
-   padding-top:30px;
-   padding-bottom:30px;
-   background-color:#f73f3f;
-   color:#fff; 
+	padding-top: 30px;
+	padding-bottom: 30px;
+	;
+	;
+	background-color: #f73f3f;
+	color: #fff;
    }
     .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
     .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
 	.map{
-	text-align:center;
+	text-align: center;
+	margin-top: -30px;
 	}
 	.liuyanimg{
 	}
@@ -135,14 +141,16 @@
 	padding-bottom:30px;
 	}
 	.liuyanms{
-	padding-right:60px;
+	/* [disabled]padding-right: 30px; */
 	}
 	.information{
 	text-align:center;
 	margin-top:30px;
 	}
 	.zhuce{
-	color:#fff;
+	color: #fff;
+	font-size: 18px;
+	text-align: left;
 	}
 	.zhuce:active,.zhuce:hover {
 	color: #333333;
@@ -160,7 +168,7 @@
 	}
 	.stem{
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	}
 	.other{
 	margin-top:10px;
@@ -183,6 +191,72 @@ margin-bottom:30px;
 .jingpin-content{
 margin-top:10px;
 }
+    .xiayi {
+	margin-bottom: -2px;
+}
+.ditusize{
+border: #333333;
+ border-style: solid;
+  border-width: 4px;
+
+}
+.lianjie{
+	padding: 20px;
+	}
+	.logopipi{
+	margin-left: 100px;
+	margin-top: -120px;
+	}
+	.contact-content{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	font-size: 16px;
+	margin-bottom: 60px;
+		}
+    .tele-contact {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+    .rexian {
+	margin-top: 30px;
+}
+    .address-other {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+    .morevideo {
+	text-align: right;
+	;
+	margin-top: -30px;
+	;
+	margin-right: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+    .yanse {
+}
+    .sizeclose {
+	font-size: 30px;
+}
+    .noreg {
+	text-align: right;
+}
+    .forgetpassword {
+	position: relative;
+	left: 0px;
+	bottom: 0px;
+	top: 20px;
+	;
+}
+.form-signin-heading{
+margin-top:0px;
+margin-bottom:20px;
+}
+.form-signin{
+padding-bottom:10px;
+
+}
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
 
@@ -201,50 +275,66 @@ margin-top:10px;
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"> <img class="img-responsive" alt="Responsive image" src="images/logo.png"></a>
+      <a class="navbar-brand" href="#"> <img class="visible-lg-block" alt="Responsive image" src="images/logo1.png"></a>
+       <a class="navbar-brand" href="#"> <img class="hidden-lg" alt="Responsive image" src="images/logo3.png"></a>
     </div>
-    <div class="login pull-right">
-	  <!-- Button trigger modal -->
 
-<a type="button" class="btn btn-default zhuce" data-toggle="modal" data-target="#myModal2"><img src="images/login-logo.png"><br><p class="bold">登陆</p>
-</a>
-	  </div>
 	  <div class="modal fade" id="myModal1">
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+      
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="sizeclose" aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+         <form class="form-signin">
+        <h2 class="form-signin-heading">注册</h2>
+        <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱或者用户名">
+        </div>
+        <div class="form-group">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="密码" >
+        </div>
+       
+        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+      </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+ 
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-	   <div class="reg pull-right">
-	  
-<a type="button" class="btn btn-default zhuce" data-toggle="modal" data-target="#myModal2"><img src="images/reg-logo.png"><br><p class="bold">注册</p>
-</a>
-	  
-	  </div>
+
 	   <div class="modal fade" id="myModal2">
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="sizeclose" aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <form class="form-login-text">
+        <h2 class="form-signin-heading">登陆</h2>
+        <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱或者用户名" >
+        </div>
+        <div class="form-group">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="密码" >
+        </div>
+		 <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住我
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+         </form>
+        <a class="forgetpassword" href="/oauth/weibo/instant_login/?_ref=frame">忘记密码>></a> 
+        <div class="noreg">
+        <p><span class="hidden-xs">还没有账号?</span> <a>点击注册>></a></p>
+        </div>
+     
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -252,14 +342,18 @@ margin-top:10px;
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	  <!-- /.modal -->
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-left">
         <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
 		<li><a href="#">课程简介</a></li>
 		<li><a href="#">精品课程</a></li>
 		<li><a href="#">关于</a></li>
 		<li><a href="#">联系我们</a></li>
       </ul>
-	
+	<ul class="nav navbar-nav navbar-right">
+		<li><a type="button" class="btn btn-default zhuce" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <span class="reg-text">注册</span>
+</a></li>
+		<li><a type="button" class="btn btn-default zhuce" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="login-text">登陆</span></a></li>
+      </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -425,6 +519,7 @@ margin-top:10px;
 </div>
 <div class="other">
 <h3 class="bold">其他课程</h3>
+<p class="morevideo"><a href="#" class="yanse" >更多>></a></p>
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 <div class="mokuai">
@@ -432,7 +527,7 @@ margin-top:10px;
  <div class="mokuai-content">
  <h5>随便说点<h5>
  <p>....</p>
- <p><a href="#" class="btn btn-success" role="button">Button</a></p>
+ <p><a href="#" class="btn btn-success" role="button">订阅</a></p>
  </div>
 </div>
 </div>
@@ -442,7 +537,7 @@ margin-top:10px;
  <div class="mokuai-content">
  <h5>随便说点<h5>
  <p>....</p>
- <p><a href="#" class="btn btn-success" role="button">Button</a></p>
+ <p><a href="#" class="btn btn-success" role="button">订阅</a></p>
 </div>
 </div>
 </div>
@@ -452,7 +547,7 @@ margin-top:10px;
  <div class="mokuai-content">
  <h5>随便说点<h5>
  <p>....</p>
- <p><a href="#" class="btn btn-success" role="button">Button</a></p>
+ <p><a href="#" class="btn btn-success" role="button">订阅</a></p>
  </div>
 </div>
 </div>
@@ -462,23 +557,30 @@ margin-top:10px;
 </div>
 <div class="contact">
 <div class="container">
-<h3 class="">联系我们</h3>
-<img src="images/pipi.png">
+<div class="contact-header">
+<h3>联系我们</h3>
+<img class="logopipi" src="images/pipi.png">
+</div>
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 <div class="contact-content">
-<p><span>南京</span><br><br>南京星梦教育科技有限将公司
+<p class="address-other"><span class="bold">南京</span><br><br>南京星梦教育科技有限将公司
 南京市鼓楼区南京大学21栋创业园203</p>
-<p><span>苏州</span><br><br>苏州梦工坊信息科技公司
-苏州市干将东路178号苏州大学记住创业广场1号<p>
-<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> whale.li@futuredreamlab.com<br><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 13770680000</p>
-<p><a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 热线电话： 400-9669-881</a></p>
+<p class="address-other"><span class="bold">苏州</span><br><br>苏州梦工坊信息科技公司
+苏州市干将东路178号苏州大学记住创业广场1号</p>
+<p class="tele-contact"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> whale.li@futuredreamlab.com<br><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 13770680000</p>
+<p class="rexian"><a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 热线电话： 400-9669-881</a></p>
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-<div class="map">
-	 <img class="img-responsive center-block" alt="Responsive image" src="images/rope.png">
-  <div class="center-block" style="width:500px;height:350px;border:#333333 solid 4px;" id="dituContent"></div>
+<div class="map hidden-xs">
+	 <img class="img-responsive center-block xiayi" alt="Responsive image" src="images/rope.png">
+  <div class="center-block ditusize" style=" width: 500px;
+ height: 350px;" id="dituContent"></div>
+</div>
+<div class="map visible-xs-block">
+	 <img class="img-responsive center-block xiayi" alt="Responsive image" src="images/rope1.png">
+  <div class="center-block " style="width:300px;height:180px;border:solid 2px #333333;" id="dituother"></div>
 </div>
 </div>
 </div>
@@ -487,7 +589,7 @@ margin-top:10px;
 <div class="footer">
 <div class="container">
 <div class="row">
-<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 <div class="liuyanimg">
@@ -498,7 +600,7 @@ margin-top:10px;
 <div class="liuyanms">
 <form>
 <div class="form-group">
-<button type="submit" class="btn btn-default">提交</button>
+<button type="submit" class="btn btn-warning">提交</button>
 </div>
 <div class="form-group">
     <label class="sr-only" for="exampleInputEmail3">message</label>
@@ -509,10 +611,10 @@ margin-top:10px;
 </div>
 </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 <div class="information">
-<img class="img-responsive center-block" alt="Responsive image" src="images/dreamlogo.png">
-<img class="img-responsive center-block" alt="Responsive image" src="images/erweima.png">
+<img class=" center-block" alt="Responsive image" src="images/dreamlogo.png">
+<img class=" center-block" alt="Responsive image" src="images/erweima.png">
 <div class="lianjie">
 <h4>友情链接</h4>
 <p>拉比盒子     科学同盟网      城市科学节  科学达人秀    中国科技馆       辣妈帮      妈淘网           好未来   环球雅思   ATA</p>
@@ -538,6 +640,10 @@ margin-top:10px;
         var point = new BMap.Point(118.78713,32.059873);//定义一个中心点坐标
         map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
+		   var mapother = new BMap.Map("dituother");//在百度地图容器中创建一个地图
+        var pointother = new BMap.Point(118.78713,32.059873);//定义一个中心点坐标
+        mapother.centerAndZoom(pointother,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.mapother = mapother;//将map变量存储在全局
     }
     
     //地图事件设置函数：
@@ -546,6 +652,10 @@ margin-top:10px;
         map.enableScrollWheelZoom();//启用地图滚轮放大缩小
         map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
         map.enableKeyboard();//启用键盘上下左右键移动地图
+		mapother.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        mapother.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        mapother.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        mapother.enableKeyboard();//启用键盘上下左右键移动地图
     }
     
     //地图控件添加函数：
