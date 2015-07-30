@@ -1124,7 +1124,6 @@ img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	margin-top: -10px;
 }
 .img-rounded {
   border-radius: 6px;
@@ -4337,10 +4336,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand > img {
   display: block;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
  .navbar-brand {
- margin-top:-20px;
- margin-right:0px;
+ margin-top:-60px;
 }
   }
 @media (min-width: 768px) {
