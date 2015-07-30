@@ -4329,6 +4329,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 	font-size: 18px;
 	line-height: 20px;
 	margin-right: 20px;
+	margin-top: 10px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4339,8 +4340,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 768px) {
  .navbar-brand {
- margin-top:-20px;
- margin-right:0px;
+	margin-right: 0px;
+	margin-top: -10px;
 }
   }
 @media (min-width: 768px) {
