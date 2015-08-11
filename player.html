@@ -263,7 +263,7 @@ padding:30px 0;
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 <div class="player-introduce pull-left">
 <h4>动画讲解</h4>
-<div class="media-img active pull-left">
+<div class="media-img active pull-left" value="animation">
 <div class="pull-left">
 <img style="margin-right:10px;" src="images/media/media1.png"  alt="Responsive image"> 
 </div>
@@ -273,7 +273,7 @@ padding:30px 0;
 </div>
 </div>
 <h4 class="pull-left">真人视频</h4>
-<div class="media-img pull-left">
+<div class="media-img pull-left" value="person">
 <div class="pull-left">
 <img style="margin-right:10px;" src="images/media/media2.png"  alt="Responsive image"> 
 </div>
@@ -294,11 +294,11 @@ padding:30px 0;
 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 <div class="player-play">
 <video controls="controls">
-  <source src="media/动画1.mp4" type="video/mp4" />
-  <source src="media/动画1.ogg" type="video/ogg" />
-  <source src="media/动画1.webm" type="video/webm" />
-  <object data="media/动画1.mp4" width="600" height="410">
-    <embed src="media/动画1.swf" width="600" height="410" />
+  <source src="media/animation.mp4" type="video/mp4" />
+  <source src="media/animation.ogg" type="video/ogg" />
+  <source src="media/animation.webm" type="video/webm" />
+  <object data="media/animation.mp4" width="600" height="410">
+    <embed src="media/animation.swf" width="600" height="410" />
   </object>
 </video>
 </div>
@@ -404,4 +404,12 @@ padding:30px 0;
 </div>
 </div>
   </body>
+  <script>
+  $(".media-img").bind("click",function(){
+  $("div.media-img").removeClass("active");
+  $(this).addClass("active");
+  var aa=$(this).attr("value");
+  $("video").attr("src","media/"+aa+".mp4");
+  });
+  </script>
 </html>
