@@ -77,9 +77,10 @@ padding-bottom:10px;
 	color: #333333;
 	}
 	.time-header{
-	padding:5px 10px;
-	background-color:#778F19;
-	
+	padding: 5px 10px;
+	background-color: #778F19;
+	font-weight: bold;
+	color: #fff;
 	}
 	.thumbnail{
 	text-align:center;
@@ -125,6 +126,19 @@ padding:30px 0;
 	font-weight:bold;
 	color:#778F19;
 	}
+	.order-progress{
+	padding: 20px 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+		}
+		.pay-product{
+			padding:10px 0px;
+			margin-bottom:10px;
+			}
+		 .active{
+			border-width:2px;
+			border-color:#aaa;
+			}
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
 
@@ -211,7 +225,7 @@ padding:30px 0;
 	  <!-- /.modal -->
       <ul class="nav navbar-nav navbar-left">
         <li><a href="index.html">首页</a></li>
-		<li><a href="#">在线课程<span class="sr-only">(current)</span></a></li>
+		<li><a href="player.html">在线课程<span class="sr-only">(current)</span></a></li>
 		<li><a href="http://futuredreamlab.com/wlmgf">怪兽社区</a></li>
 		<li><a href="#">关于我们</a></li>
       </ul>
@@ -233,7 +247,7 @@ padding:30px 0;
 </ol>
 </div>
 <div class="order-progress">
-<img src="images/steps1.png" class="img-responsive center-block" alt="Responsive image">
+<img src="images/step11.png" class="img-responsive center-block" alt="Responsive image">
 </div>
 <div class="row">
 <div class="course-time">
@@ -241,7 +255,7 @@ padding:30px 0;
 <h4>亲,请选择套餐</h4>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div class="thumbnail">
+ <div class="thumbnail" value="199">
      <div class="time-header">
 	 <h5>1个月</h5>
 	 </div>
@@ -251,7 +265,7 @@ padding:30px 0;
     </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div class="thumbnail">
+ <div class="thumbnail" value="599" >
      <div class="time-header">
 	 <h5>3个月</h5>
 	 </div>
@@ -261,7 +275,7 @@ padding:30px 0;
     </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div class="thumbnail">
+ <div class="thumbnail" value="1099">
      <div class="time-header">
 	 <h5>12个月</h5>
 	 </div>
@@ -274,20 +288,20 @@ padding:30px 0;
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 <div class="pay-product">
 <h4>你将获得的资源</h4>
-<div class="row">
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;">
+<div class="row" >
+<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;margin-top:10px;">
 <img src="images/11.png">
 <p>动画</p>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;">
+<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center; margin-top:10px;">
 <img src="images/12.png">
 <p>视频</p>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;">
+<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;margin-top:10px;">
 <img src="images/13.png">
 <p>漫画</p>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;">
+<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;margin-top:10px;">
 <img src="images/14.png">
 <p>材料</p>
 </div>
@@ -333,4 +347,13 @@ padding:30px 0;
 </div>
 </div>
   </body>
+  <script>
+  $(".thumbnail").bind("click", function(event){
+  $("div.thumbnail").removeClass("active");
+  $(this).addClass("active");
+var num=$(this).attr("value");
+$(".count").text(num);
+});
+  
+  </script>
 </html>
