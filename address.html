@@ -9,7 +9,6 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,23 +75,6 @@ padding-bottom:10px;
 	.zhuce:focus,.zhuce:hover {
 	color: #333333;
 	}
-	.time-header{
-	padding: 5px 10px;
-	background-color: #778F19;
-	font-weight: bold;
-	color: #fff;
-	}
-	.thumbnail{
-	text-align:center;
-	font-weight:bold;
-	height:160px;
-	}
-	.jiesuan{
-	padding:30px 20px;
-	background-color: #eeeeee;
-	text-align:right;
-	margin-bottom:30px;
-	}
 	.player-footer{
 background-color:#f2f2f2;
 padding:30px 0;
@@ -121,24 +103,11 @@ padding:30px 0;
 	.lianjie{
 	padding: 20px 40px;
 	}
-	.count{
-	font-size:24px;
-	font-weight:bold;
-	color:#778F19;
-	}
 	.order-progress{
 	padding: 20px 0px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-		}
-		.pay-product{
-			padding:10px 0px;
-			margin-bottom:10px;
-			}
-		 .active{
-			border-width:2px;
-			border-color:#aaa;
-			}
+	}
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
 
@@ -243,82 +212,83 @@ padding:30px 0;
 <ol class="breadcrumb">
   <li><a href="index.html">首页</a></li>
   <li><a href="index.html">我的订单</a></li>
-  <li class="active">选择课程</li>
+  <li class="active">填写地址</li>
 </ol>
 </div>
 <div class="order-progress">
-<img src="images/step11.png" class="img-responsive center-block" alt="Responsive image">
+<img src="images/step12.png" class="img-responsive center-block" alt="Responsive image">
 </div>
-<div class="row">
-<div class="course-time">
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-<h4>亲,请选择套餐</h4>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div class="thumbnail" value="199">
-     <div class="time-header">
-	 <h5>1个月</h5>
-	 </div>
-      <div class="caption">
-        <p>199元</p>
-      </div>
+	<div class="shopping_item">
+		<h3 class="shopping_tit">收货地址</h3>
+		<div class="shopping-address">
+		<form class="form-horizontal">
+  <div class="form-group">
+    <label for="address1" class="col-sm-2 control-label"><span style="color:red;">*</span> 选择地区：</label>
+    <div class="col-sm-4">
+      <select class="form-control">
+  <option>江苏省</option>
+  <option>安徽省</option>
+  <option>山东省</option>
+  <option>浙江省</option>
+  <option>福建省</option>
+</select>
     </div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div class="thumbnail" value="599" >
-     <div class="time-header">
-	 <h5>3个月</h5>
-	 </div>
-      <div class="caption">
-        <p>599元</p>
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="address2" class="col-sm-2 control-label"><span style="color:red;">*</span> 详细地址：</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" rows="3" placeholder="建议填写正确地址，如街道号、门牌号" ></textarea>
     </div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
- <div class="thumbnail" value="1099">
-     <div class="time-header">
-	 <h5>12个月</h5>
-	 </div>
-      <div class="caption">
-        <p>1099元</p>
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="address3" class="col-sm-2 control-label"><span style="color:red;">*</span> 收货人：</label>
+    <div class="col-sm-2">
+      <input type="address" class="form-control" id="inputAdress3" placeholder="不超过10字">
     </div>
+  </div>
+  <div class="form-group">
+    <label for="address4" class="col-sm-2 control-label"><span style="color:red;">*</span> 手机号码：</label>
+    <div class="col-sm-2">
+           <select class="form-control">
+  <option>大陆+86</option>
+  <option>香港+852</option>
+  <option>台湾+856</option>
+</select>
+    </div>
+	<div class="col-sm-3">
+      <input type="address" class="form-control" id="inputAdress4" placeholder="字数不超过10字">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success">确认收货地址</button>
+    </div>
+  </div>
+</form>
 </div>
+	</div>
+		<div class="shopping_item">
+		<h3 class="shopping_tit">支付方式</h3>
+		<div class="shopping-paymethod">
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    支付宝支付
+  </label>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-<div class="pay-product">
-<h4>你将获得的资源</h4>
-<div class="row" >
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;margin-top:10px;">
-<img src="images/11.png">
-<p>动画</p>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    微信支付
+  </label>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center; margin-top:10px;">
-<img src="images/12.png">
-<p>视频</p>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+    网上银行
+  </label>
 </div>
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;margin-top:10px;">
-<img src="images/13.png">
-<p>漫画</p>
-</div>
-<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5" style="text-align:center;margin-top:10px;">
-<img src="images/14.png">
-<p>材料</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jiesuan">
-<div class="row">
-<div class="col-lg-9">
-<p>课程报名费（包括教材和材料）合计：<span class="count">0</span>元</p>
-</div>
-<div class=" col-lg-3">
-<a class="btn btn-success btn-lg" href="address.html" role="button">下一步</a>
-</div>
-</div>
-</div>
+	</div>
 </div>
 <div class="player-footer">
 <div class="container">
@@ -347,13 +317,4 @@ padding:30px 0;
 </div>
 </div>
   </body>
-  <script>
-  $(".thumbnail").bind("click", function(event){
-  $("div.thumbnail").removeClass("active");
-  $(this).addClass("active");
-var num=$(this).attr("value");
-$(".count").text(num);
-});
-  
-  </script>
 </html>
