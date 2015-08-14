@@ -267,14 +267,39 @@ padding:20px;
 .kecheng-img a:hover img{
 border:1px solid #fff;
 }
+#preloader  {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: #fff;
+   z-index: 99999;
+   height: 100%;
+}
+#status  {    
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: 64px;
+   height: 64px;
+   margin: -32px 0 0 -32px;  
+   padding: 0;    
+}
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script src="js/jiazai.js"></script>
   </head>
   <body>
+  <div id="preloader">      
+      <div id="status">
+         <img src="images/preloader.gif" height="64" width="64" alt="">
+      </div>
+   </div>
     <nav class="navbar navbar-inverse">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
