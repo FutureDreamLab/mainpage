@@ -82,8 +82,8 @@ display:inline-block;
 padding-right:30px;
 }
 .player-comment{
-height:80px;
-padding-top:10px;
+margin-top:10px;
+margin-bottom:10px;
 }
 .player-footer{
 background-color:#f2f2f2;
@@ -113,6 +113,9 @@ padding:30px 0;
 	.lianjie{
 	padding: 20px 40px;
 	}
+	.player-introduce {
+	margin-bottom:50px;
+	}
 	.player-introduce .active{
 	background-color:#9bba1f;
 	}
@@ -125,11 +128,12 @@ padding:30px 0;
 	text-align: center;
 }
 .story-introduce{
-	margin-top:60px;
+	margin-top:10px;
+	margin-bottom:10px;
 	}
 	.media-comment{
 		
-		margin-top:30px;
+		margin-top:20px;
 		margin-bottom:30px;
 		}
     .green {
@@ -147,6 +151,12 @@ padding:30px 0;
 	}
     .player-list {
 	margin: 20px 0px;
+}
+.nextvideo{
+background-color:#f1f1f1;
+margin-top:10px;
+padding:5px 0px;
+text-align:center;
 }
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
@@ -234,7 +244,7 @@ padding:30px 0;
 	  <!-- /.modal -->
       <ul class="nav navbar-nav navbar-left">
         <li><a href="index.html">首页</a></li>
-		<li class="active"><a href="#">在线课程<span class="sr-only">(current)</span></a></li>
+		<li><a href="course.html">在线课程<span class="sr-only">(current)</span></a></li>
 		<li><a href="http://futuredreamlab.com/wlmgf">怪兽社区</a></li>
 		<li><a href="#">关于我们</a></li>
       </ul>
@@ -258,11 +268,11 @@ padding:30px 0;
 <div class="row">
 <div class="player">
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<div class="player-introduce pull-left">
+<div class="player-introduce pull-left hidden-xs">
 <h4>动画讲解</h4>
 <div class="media-img active pull-left" value="animation">
 <div class="pull-left">
-<img style="margin-right:10px;" src="images/media/media1.png"  alt="Responsive image"> 
+<img style="margin-right:10px;" src="images/media/animation.png"  alt="Responsive image"> 
 </div>
 <div class="pull-left middle" style="margin-top:30px;">
 <h5>达维恩的古代之行</h5>
@@ -272,7 +282,7 @@ padding:30px 0;
 <h4 class="pull-left">真人视频</h4>
 <div class="media-img pull-left" value="person">
 <div class="pull-left">
-<img style="margin-right:10px;" src="images/media/media2.png"  alt="Responsive image"> 
+<img style="margin-right:10px;" src="images/media/person.png"  alt="Responsive image"> 
 </div>
 <div class="pull-left middle" style="margin-top:30px;">
 <h5>投石车的制作</h5>
@@ -290,21 +300,29 @@ padding:30px 0;
 </div>
 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 <div class="embed-responsive embed-responsive-16by9 player-play">
-  <video id="myvideo" class="embed-responsive-item"  controls="controls">
+  <video id="myvideo" class="embed-responsive-item" poster="images/media/animation.png" controls="controls">
   <source src="media/animation.mp4" type="video/mp4" />
   <source src="media/animation.ogg" type="video/ogg" />
   <source src="media/animation.webm" type="video/webm" />
 </video>
 </div>
 <div class="player-comment">
-<ul class="comment-icon pull-left">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+<ul class="comment-icon">
 <li><img src="images/good.png"><br>点赞</li>
 <li><img src="images/save.png"><br>收藏</li>
 <li><img src="images/download.png"><br>下载</li>
 <li><img src="images/share.png"><br>分享</li>
 </ul>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
 <a class="btn btn-success btn-lg pull-right" href="#" role="button">订阅</a>
-<img class="pull-right" style="margin-right:60px;" src="images/fengexian1.png">
+</div>
+</div>
+</div>
+<div class="visible-xs-block nextvideo" >
+<p>下一段视频：<span>真人演示</span></p>
 </div>
 <div class="media-comment">
 <p>小伙伴们等待着你们的评论呢</p>
@@ -404,7 +422,7 @@ padding:30px 0;
   $(this).addClass("active");
   var aa=$(this).attr("value");
   $("video").attr("src","media/"+aa+".mp4");
-  $("video").attr("autoplay","autoplay");
+  $("video").attr("poster","images/media/"+aa+".png");
   });
 
   </script>
