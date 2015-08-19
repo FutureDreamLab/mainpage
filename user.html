@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>用户中心</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="responsive-nav.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+	.navbar{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+	.navbar-header{
+	padding-bottom: 10px;
+	}
+	.navbar-nav{
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	}
+	.login{
+	text-align:center;
+	margin-left:10px;
+	color:#fff;
+	}
+	.reg{
+	text-align:center;
+	margin-left:10px;
+	color:#fff;
+	}
+	.bold{
+	font-weight: bold;
+	}
+
+
+	.time-header{
+	padding: 5px 10px;
+	background-color: #778F19;
+	font-weight: bold;
+	color: #fff;
+	}
+	.thumbnail{
+	text-align:center;
+	font-weight:bold;
+	height:160px;
+	}
+	.jiesuan{
+	padding:30px 20px;
+	background-color: #eeeeee;
+	text-align:right;
+	margin-bottom:30px;
+	}
+	.player-footer{
+background-color:#f2f2f2;
+padding:30px 0;
+}
+.contact-content{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	font-size: 16px;
+		}
+    .tele-contact {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+    .rexian {
+	margin-top: 30px;
+}
+    .address-other {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.information{
+	text-align:center;
+	margin-top:30px;
+	}
+	.lianjie{
+	padding: 20px 40px;
+	}
+.list-content{
+margin-top:30px;
+margin-bottom:30px;
+}
+.user-list{
+padding:0px 30px;
+}
+.list-size{
+text-align:center;
+border: 1px solid #aaa;
+}
+.list-size dd{
+padding:8px 0px;
+}
+.list-size dt{
+padding:10px 0px;
+background:#f1f1f1;
+font-size:18px;
+border-bottom:1px solid #aaa;
+}
+    </style>
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="js/bootstrap.min.js"></script>
+<script src="responsive-nav.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand1" href="index.html"> <img class="visible-lg-block " alt="Responsive image" src="images/logo1.png"></a>
+       <a class="navbar-brand" href="index.html"> <img class=" hidden-lg " alt="Responsive image" src="images/logo4.png"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <!-- /.modal -->
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="index.html">首页</a></li>
+		<li><a href="player.html">在线课程<span class="sr-only">(current)</span></a></li>
+		<li><a href="http://futuredreamlab.com/wlmgf">怪兽社区</a></li>
+		<li><a href="#">关于我们</a></li>
+      </ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="#" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="login-text">fk0802014232</span></a></li>
+		<li><a href="index.html">退出</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+<div class="order-header">
+<ol class="breadcrumb">
+  <li><a href="index.html">首页</a></li>
+  <li><a href="index.html">个人中心</a></li>
+  <li class="active">我的订单</li>
+</ol>
+</div>
+<div class="list-content">
+<div class="row">
+<div class="col-sm-3 user-list">
+<dl class="list-size">
+  <dt> 订单中心</dt>
+
+  <dd> 全部订单</dd>
+  <dd> 待付款</dd>
+  <dd>服务中</dd>
+  <dd> 已完成</dd>
+  <dd> 修改收货地址</dd>
+
+</dl>
+<dl class="list-size">
+  <dt> 自助服务</dt>
+  <dd>我的优惠券</dd>
+  <dd>礼品卡兑换</dd>
+</dl>
+ 
+<dl class="list-size">
+  <dt> 账号设置</dt>
+  <dd> 个人资料</dd> 
+  <dd> 安全中心</dd>   
+  <dd> 退出登录</dd>
+</dl>
+</div>
+<div class="col-sm-9">
+<div>
+  <!-- Nav tabs -->
+  <ul id="orderTabs" class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">全部订单(0)</a></li>
+    <li role="presentation"><a href="#pay" aria-controls="profile" role="tab" data-toggle="tab">待付款(0)</a></li>
+    <li role="presentation"><a href="#unfinished" aria-controls="messages" role="tab" data-toggle="tab">服务中(0)</a></li>
+    <li role="presentation"><a href="#finished" aria-controls="settings" role="tab" data-toggle="tab">已完成(0)</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="all"><p>没有订单哦</p></div>
+    <div role="tabpanel" class="tab-pane" id="pay"><p>未完成付款</p></div>
+    <div role="tabpanel" class="tab-pane" id="unfinished"><p>你正在购买如下商品</p></div>
+    <div role="tabpanel" class="tab-pane" id="finished"><p>您已经购买了下列商品</p></div>
+  </div>
+</div>
+<div>
+<h4>我的优惠券</h4>
+<img style="padding:20px 10px;" src="images/优惠券.jpg">
+<form class="form-inline" style="margin-top:20px;">
+  <div class="form-group">
+    <label for="InputJihuoma">激活优惠劵</label>
+    <input type="text" class="form-control" id="InputJihuoma" placeholder="例如：12kd35">
+  </div>
+  <button type="submit" class="btn btn-success">激活</button>
+</form>
+</div>
+<div>
+<h4>礼品卡兑换</h4>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="InputJihuoma">领取礼品</label>
+    <input type="text" class="form-control" id="InputJihuoma" placeholder="输入礼品卡号">
+  </div>
+  <button type="submit" class="btn btn-success">提交</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="player-footer">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 hidden-xs">
+<div class="contact-content">
+<p class="address-other"><span class="bold">南京</span><br><br>南京星梦教育科技有限将公司
+南京市鼓楼区南京大学21栋创业园203</p>
+<p class="address-other"><span class="bold">苏州</span><br><br>苏州梦工坊信息科技公司
+苏州市干将东路178号苏州大学记住创业广场1号</p>
+<p class="tele-contact"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> whale.li@futuredreamlab.com<br><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 13770680000</p>
+<p class="rexian"><a href="#" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 热线电话： 400-9669-881</a></p>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<div class="information">
+<img class=" center-block" alt="Responsive image" src="images/dreamlogo.png">
+<img style="margin-top:10px;" class=" center-block" alt="Responsive image" src="images/erweima.png">
+<div class="lianjie">
+<h4>友情链接</h4>
+<p>拉比盒子     科学同盟网      城市科学节  科学达人秀    中国科技馆       辣妈帮      妈淘网           好未来   环球雅思   ATA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </body>
+  <script>
+  $(".thumbnail").bind("click", function(event){
+  $("div.thumbnail").removeClass("active");
+  $(this).addClass("active");
+var num=$(this).attr("value");
+$(".count").text(num);
+});
+  $('#orderTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+  </script>
+</html>
