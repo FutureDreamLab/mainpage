@@ -116,6 +116,9 @@ padding:30px 0;
 	margin-bottom: 40px;
 	}
 	.player-introduce .active{
+	background-color:#cfde94;
+	}
+	.player-introduce .active1{
 	background-color:#9bba1f;
 	}
 	.media-img{
@@ -269,7 +272,7 @@ text-align:center;
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 <div class="player-introduce pull-left hidden-xs">
 <h4>动画讲解</h4>
-<div class="media-img active pull-left" value="animation">
+<div class="media-img pull-left" value="animation">
 <div class="pull-left">
 <img style="margin-right:10px;" src="images/media/animation.png"  alt="Responsive image"> 
 </div>
@@ -417,12 +420,20 @@ text-align:center;
   </body>
   <script>
   $(".media-img").on("click",function(){
-  $("div.media-img").removeClass("active");
-  $(this).addClass("active");
+  $("div.media-img").removeClass("active1");
+  $(this).addClass("active1");
   var aa=$(this).attr("value");
   $("video").attr("src","media/"+aa+".mp4");
   $("video").attr("poster","images/media/"+aa+".png");
   });
+  $(".media-img").hover(
+  function () {
+    $(this).addClass("active");
+  },
+  function () {
+    $(this).removeClass("active");
+  }
+);
 
   </script>
 </html>
