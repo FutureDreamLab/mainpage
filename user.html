@@ -113,9 +113,6 @@ border-bottom:1px solid #aaa;
 width:84px;
 height:84px;
 border:2px solid #ddd;
-background: url('images/图像.jpg');
-background-repeat:no-repeat;
-background-size:80px 80px;
 position:relative;
 text-align:center;
 }
@@ -126,7 +123,8 @@ position:absolute;
 bottom:0px;
 left:0px;
 color:#fff;
-height:0px;
+padding:5px 0px;
+display:none;
 }
 .content-edit{
 display:none;
@@ -161,6 +159,23 @@ margin-bottom:10px;
     .welcome1 {
 	padding-top: 10px;
 	padding-bottom:10px;
+}
+.img-display{
+width:84px;
+height:84px;
+border:2px solid #ddd;
+margin-bottom:30px;
+}
+
+.img-choose img:hover
+{
+opacity:0.4;
+filter:alpha(opacity=40); /* 针对 IE8 以及更早的版本 */
+}
+.img-choose{
+margin-top:20px;
+margin-bottom:20px;
+padding:0px 10px;
 }
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
@@ -359,7 +374,8 @@ margin-bottom:10px;
     <label for="inputimg" class="col-sm-2 control-label">当前图像:</label>
     <div class="col-sm-4">
       <div class="input-img" >
-	  <a class="img-text" href="#">编辑图像</a>
+	    <img  style="width:80px;height:80px;" src="images/图像.jpg">
+	  <a class="img-text" href="#select-img" data-toggle="modal" data-target="#select-img">编辑图像</a>
 	  </div>
 	  </div>
   </div>
@@ -484,6 +500,43 @@ margin-bottom:10px;
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div class="modal fade" id="select-img">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+	  <div class="img-display">
+	  <img id="changeimg" style="width:80px;height:80px;" src="images/图像.jpg">
+	  </div>
+	  <div class="img-choose">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像1.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像2.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像3.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像4.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像5.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像6.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像7.jpg">
+	  <img  style="width:80px;height:80px;" src="images/profile/头像8.jpg">
+	  </div>
+	  <div style="margin:20px 0px;">
+	  <form>
+      <div class="form-group">
+    <label for="exampleInputFile">上传一张本地图片</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">图片格式为jpg,png或者gif</p>
+  </div>
+		</form>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">退出</button>
+        <button type="button" id="img-save" class="btn btn-primary" data-dismiss="modal">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <div class="player-footer">
 <div class="container">
 <div class="row">
@@ -518,13 +571,14 @@ margin-bottom:10px;
 })
 $(".input-img").hover(
  function(){
-  $(".img-text").animate({height:"30px"},"fast");
+ $(".img-text").slideDown();
+  
 },
 function(){
-  $(".img-text").animate({height:"0px"},"fast")
+  $(".img-text").slideUp();
   })
   </script>
-  <script>
+  <script type="text/javascript">
 
   $("dl.list-size dd").bind('click',function() {   
 		$(".content-edit").removeClass("active");
@@ -547,8 +601,14 @@ function(){
 		case 2: $('#orderTabs li:eq(2) a').tab('show');break;
 		case 3: $('#orderTabs li:eq(3) a').tab('show');break;
 		}
-		
   });
-  
+  $(".img-choose img").bind('click',function(){
+		var dif_img=$(this).attr("src");
+		$(".img-display img").attr("src",dif_img);
+		});
+		$("#img-save").bind('click',function(){
+		var dif_src=$(".img-display img").attr("src");
+		$(".input-img img").attr("src",dif_src);
+		})
   </script>
 </html>
