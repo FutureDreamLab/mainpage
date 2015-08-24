@@ -186,7 +186,7 @@ background-color:#15C1E5;width:100px;left:-100px;top:0;bottom:0;z-index:99999;po
 display:block;
 color:#fff;
 text-align:center;
-padding: 8px 0px;
+padding: 5px 0px;
 }
 #slider a:hover{background-color:#fcba46}
 
@@ -196,7 +196,7 @@ color:#fff;
 width:100px;
 }
 .list-order dt{
-padding:10px 0px;
+padding:8px 0px;
 background-color:#FFA200;
 font-size:18px;
 }
@@ -205,15 +205,8 @@ position:absolute;left:0;top:20px;
 }
 .dianji{
 position:absolute;left:100px;top:100px;
-transition: transform 1s;
 }
-.dianji:hover{
-transform:rotate(30deg);
--moz-transform:rotate(30deg); /* Firefox 4 */
--webkit-transform:rotate(30deg); /* Safari and Chrome */
--o-transform:rotate(30deg); /* Opera */
 
-}
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
 
@@ -260,11 +253,10 @@ transform:rotate(30deg);
 </ol>
 </div>
 <div id="slider" >
-<div class="order-position">
 <div class="dianji visible-xs-block">
-<p style="color:#F73F3F;text-align:right;font-weight:bold;font-size:16px;">点我</p>
-<img src="images/pipi.png" style="width:50px">
+<p style="padding:5px 2px;background-color:#FFA200;color:#fff;text-align:right;font-size:16px;">显<br>示</p>
 </div>
+<div class="order-position">
 <dl class="list-order">
   <dt> 订单中心</dt>
   <dd value="0"> <a href="#content1">全部订单</a></dd>
@@ -686,12 +678,13 @@ function(){
 		$(".input-img img").attr("src",dif_src);
 		});
 	$(".dianji").bind('click',function() { 
-		$(".dianji p").hide();
 		var _index=$("#slider").offset().left;
 		if(_index>=0){
 				$("#slider").animate({left:-100},300,'swing');
+				$(".dianji p").html("显<br>示");
 	     } else {
 				$("#slider").animate({left:0},300,'swing');
+				$(".dianji p").html("隐<br>藏");
 			}
   });
   </script>
