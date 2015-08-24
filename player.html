@@ -324,7 +324,7 @@ text-align:center;
 </div>
 </div>
 </div>
-<div class="visible-xs-block nextvideo" >
+<div class="visible-xs-block nextvideo" value="person">
 <p>下一段视频：<span>真人演示</span></p>
 </div>
 <div class="media-comment">
@@ -433,8 +433,11 @@ text-align:center;
   },
   function () {
     $(this).removeClass("active");
-  }
-);
-
+  });
+ $(".nextvideo").on("click",function(){
+  var cc=$(this).attr("value");
+  $("video").attr("src","media/"+cc+".mp4");
+  $("video").attr("poster","images/media/"+cc+".png");
+  });
   </script>
 </html>

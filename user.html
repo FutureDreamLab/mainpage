@@ -177,6 +177,43 @@ margin-top:20px;
 margin-bottom:20px;
 padding:0px 10px;
 }
+#slider{
+background-color:#15C1E5;width:100px;left:-100px;top:0;bottom:0;z-index:99999;position:fixed;
+}
+
+#slider a
+{text-decoration:none;
+display:block;
+color:#fff;
+text-align:center;
+padding: 8px 0px;
+}
+#slider a:hover{background-color:#fcba46}
+
+.list-order{
+text-align:center;
+color:#fff;
+width:100px;
+}
+.list-order dt{
+padding:10px 0px;
+background-color:#FFA200;
+font-size:18px;
+}
+.order-position{
+position:absolute;left:0;top:20px;
+}
+.dianji{
+position:absolute;left:100px;top:100px;
+transition: transform 1s;
+}
+.dianji:hover{
+transform:rotate(30deg);
+-moz-transform:rotate(30deg); /* Firefox 4 */
+-webkit-transform:rotate(30deg); /* Safari and Chrome */
+-o-transform:rotate(30deg); /* Opera */
+
+}
     </style>
 <script src="js/jquery-1.11.3.min.js"></script>
 
@@ -222,10 +259,39 @@ padding:0px 10px;
   <li class="active">我的订单</li>
 </ol>
 </div>
+<div id="slider" >
+<div class="order-position">
+<div class="dianji visible-xs-block">
+<p style="color:#F73F3F;text-align:right;font-weight:bold;font-size:16px;">点我</p>
+<img src="images/pipi.png" style="width:50px">
+</div>
+<dl class="list-order">
+  <dt> 订单中心</dt>
+  <dd value="0"> <a href="#content1">全部订单</a></dd>
+  <dd value="1"><a href="#content1" > 待付款</a></dd>
+  <dd value="2"><a href="#content1" > 服务中</a></dd>
+  <dd value="3"> <a href="#content1" >已完成</a></dd>
+  <dd> <a href="#content2" > 修改收货地址</a></dd>
+
+</dl>
+<dl class="list-order">
+  <dt> 自助服务</dt>
+  <dd><a href="#content3" > 我的优惠券</a></dd>
+  <dd><a href="#content4" > 礼品卡兑换</a></dd>
+</dl>
+ 
+<dl class="list-order">
+  <dt> 账号设置</dt>
+  <dd> <a href="#content5" > 个人资料</a></dd> 
+  <dd> <a href="#content6" > 安全中心</a></dd>   
+  <dd><a href="index.html" > 退出登录</a></dd>
+</dl>
+</div>
+</div>
 <div class="list-content">
 <div class="row">
 <div class="col-xs-6 col-sm-3 user-list hidden-xs">
-<dl class="list-size order-list">
+<dl class="list-size">
   <dt> 订单中心</dt>
 
   <dd value="0"> <a href="#content1"  >全部订单</dd>
@@ -233,7 +299,6 @@ padding:0px 10px;
   <dd value="2"><a href="#content1" > 服务中</a></dd>
   <dd value="3"> <a href="#content1" >已完成</a></dd>
   <dd> <a href="#content2" > 修改收货地址</a></dd>
-
 </dl>
 <dl class="list-size">
   <dt> 自助服务</dt>
@@ -584,23 +649,33 @@ function(){
 		$(".content-edit").removeClass("active");
         var activeTab = $(this).find("a").attr("href"); 
 		$(activeTab).addClass("active");
-		return false;
-  });
-  
-  $(".edit").bind('click',function() {   
-		$(".content-edit").removeClass("active");
-        var activeTab = $(this).find("a").attr("href"); 
-		$(activeTab).addClass("active");
-		return false;
-  });
- $("dl.order-list dd").bind('click',function() {   
-		var kk=$(this).attr("value");
+			var kk=$(this).attr("value");
 		switch(parseInt(kk)){
 		case 0: $('#orderTabs li:eq(0) a').tab('show');break;
 		case 1: $('#orderTabs li:eq(1) a').tab('show');break;
 		case 2: $('#orderTabs li:eq(2) a').tab('show');break;
 		case 3: $('#orderTabs li:eq(3) a').tab('show');break;
 		}
+		return false;
+  });
+   $("dl.list-order dd").bind('click',function() {   
+		$(".content-edit").removeClass("active");
+        var activeTab = $(this).find("a").attr("href"); 
+		$(activeTab).addClass("active");
+			var kk=$(this).attr("value");
+		switch(parseInt(kk)){
+		case 0: $('#orderTabs li:eq(0) a').tab('show');break;
+		case 1: $('#orderTabs li:eq(1) a').tab('show');break;
+		case 2: $('#orderTabs li:eq(2) a').tab('show');break;
+		case 3: $('#orderTabs li:eq(3) a').tab('show');break;
+		}
+		return false;
+  });
+  $(".edit").bind('click',function() {   
+		$(".content-edit").removeClass("active");
+        var activeTab = $(this).find("a").attr("href"); 
+		$(activeTab).addClass("active");
+		return false;
   });
   $(".img-choose img").bind('click',function(){
 		var dif_img=$(this).attr("src");
@@ -609,6 +684,15 @@ function(){
 		$("#img-save").bind('click',function(){
 		var dif_src=$(".img-display img").attr("src");
 		$(".input-img img").attr("src",dif_src);
-		})
+		});
+	$(".dianji").bind('click',function() { 
+		$(".dianji p").hide();
+		var _index=$("#slider").offset().left;
+		if(_index>=0){
+				$("#slider").animate({left:-100},300,'swing');
+	     } else {
+				$("#slider").animate({left:0},300,'swing');
+			}
+  });
   </script>
 </html>
