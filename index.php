@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<?php
+require_once './include.php';
+
+?>
+
+<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
@@ -281,14 +286,14 @@ border:1px solid #fff;
    z-index: 99999;
    height: 100%;
 }
-#status  {    
+#status  {
    position: absolute;
    left: 50%;
    top: 50%;
    width: 250px;
    height: 250px;
-   margin: -125px 0 0 -125px;  
-   padding: 0;    
+   margin: -125px 0 0 -125px;
+   padding: 0;
 }
 @keyframes myfirst
 {
@@ -322,7 +327,7 @@ border:1px solid #fff;
 <script src="js/jiazai.js"></script>
   </head>
   <body>
-  <div id="preloader">      
+  <div id="preloader">
       <div id="status">
          <img src="images/1.gif" height="250"  alt="">
       </div>
@@ -345,11 +350,11 @@ border:1px solid #fff;
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-      
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="sizeclose" aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-         <form class="form-signin">
+      <form class="form-signin" action="doLogin.php" method="post">
         <h2 class="form-signin-heading">注册</h2>
         <div class="form-group">
         <label for="inputEmail" class="sr-only">Email address</label>
@@ -359,11 +364,11 @@ border:1px solid #fff;
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="密码" >
         </div>
-       
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
       </form>
       </div>
- 
+
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -392,11 +397,11 @@ border:1px solid #fff;
         </div>
         <a href="user.html" role="button" class="btn btn-lg btn-primary btn-block" type="submit">登陆</a>
          </form>
-        <a class="forgetpassword" href="/oauth/weibo/instant_login/?_ref=frame">忘记密码>></a> 
+        <a class="forgetpassword" href="/oauth/weibo/instant_login/?_ref=frame">忘记密码>></a>
         <div class="noreg">
         <p><span class="hidden-xs">还没有账号?</span> <a>点击注册>></a></p>
         </div>
-     
+
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -434,11 +439,11 @@ border:1px solid #fff;
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img src="images/jieshao1.jpg" alt="...">
-      
+
     </div>
     <div class="item">
       <img src="images/jieshao1.jpg" alt="...">
-     
+
     </div>
     <div class="item">
       <img src="images/jieshao1.jpg" alt="...">
@@ -467,11 +472,11 @@ border:1px solid #fff;
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img src="images/jieshao1-1.jpg" alt="...">
-      
+
     </div>
     <div class="item">
       <img src="images/jieshao1-1.jpg" alt="...">
-     
+
     </div>
     <div class="item">
       <img src="images/jieshao1-1.jpg" alt="...">
@@ -548,12 +553,12 @@ border:1px solid #fff;
   <h3 class="bold">运营模式</h3>
 
   </div>
- 
+
   <div class="yunying_content">
 
 <div class="row">
 
- 
+
   <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
   <div class="donghua">
   <a href="#"><img style="width:50px;" src="images/animation.png">
@@ -727,7 +732,7 @@ border:1px solid #fff;
         addMapControl();//向地图添加控件
         addMarker();//向地图中添加marker
     }
-    
+
     //创建地图函数：
     function createMap(){
         var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
@@ -739,7 +744,7 @@ border:1px solid #fff;
         mapother.centerAndZoom(pointother,17);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.mapother = mapother;//将map变量存储在全局
     }
-    
+
     //地图事件设置函数：
     function setMapEvent(){
         map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
@@ -751,7 +756,7 @@ border:1px solid #fff;
         mapother.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
         mapother.enableKeyboard();//启用键盘上下左右键移动地图
     }
-    
+
     //地图控件添加函数：
     function addMapControl(){
         //向地图中添加缩放控件
@@ -764,7 +769,7 @@ border:1px solid #fff;
 	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
 	map.addControl(ctrl_sca);
     }
-    
+
     //标注点数组
     var markerArr = [{title:"我的标记",content:"我的备注",point:"118.786295|32.059261",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
 		 ];
@@ -786,7 +791,7 @@ border:1px solid #fff;
                         color:"#333",
                         cursor:"pointer"
             });
-			
+
 			(function(){
 				var index = i;
 				var _iw = createInfoWindow(i);
@@ -821,7 +826,7 @@ border:1px solid #fff;
         var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
         return icon;
     }
-    
+
     initMap();//创建和初始化地图
 </script>
 <script>
@@ -902,7 +907,7 @@ Sparkle.prototype = {
 
     var _this = this;
 
-    this.$canvas = 
+    this.$canvas =
       $("<canvas>")
         .addClass("sparkle-canvas")
         .css({
@@ -983,7 +988,7 @@ Sparkle.prototype = {
       ctx.globalAlpha = derpicle.opacity;
       ctx.drawImage(img, derpicle.style, 0, 7, 7, derpicle.position.x, derpicle.position.y, 7, 7);
 
-      if( this.options.color ) {  
+      if( this.options.color ) {
 
         ctx.globalCompositeOperation = "source-atop";
         ctx.globalAlpha = 0.5;
@@ -1012,24 +1017,24 @@ Sparkle.prototype = {
          var randY = ( Math.random() > Math.random()*3 );
 
          if( randX ) {
-           u.position.x += (u.delta.x / 1500); 
-         }        
+           u.position.x += (u.delta.x / 1500);
+         }
 
          if( !randY ) {
-           u.position.y -= (u.delta.y / 800);         
+           u.position.y -= (u.delta.y / 800);
          }
 
          if( u.position.x > _this.canvas.width ) {
            u.position.x = -7;
          } else if ( u.position.x < -7 ) {
-           u.position.x = _this.canvas.width; 
+           u.position.x = _this.canvas.width;
          }
 
          if( u.position.y > _this.canvas.height ) {
            u.position.y = -7;
            u.position.x = Math.floor(Math.random()*_this.canvas.width);
          } else if ( u.position.y < -7 ) {
-           u.position.y = _this.canvas.height; 
+           u.position.y = _this.canvas.height;
            u.position.x = Math.floor(Math.random()*_this.canvas.width);
          }
 
@@ -1052,7 +1057,7 @@ Sparkle.prototype = {
          if( _this.fadeCount < 0 ) {
            window.cancelAnimationFrame( _this.anim );
          } else {
-           _this.update(); 
+           _this.update();
          }
        } else {
          _this.update();
@@ -1090,7 +1095,7 @@ Sparkle.prototype = {
 
   "datauri" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAHCAYAAAD5wDa1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozNDNFMzM5REEyMkUxMUUzOEE3NEI3Q0U1QUIzMTc4NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozNDNFMzM5RUEyMkUxMUUzOEE3NEI3Q0U1QUIzMTc4NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM0M0UzMzlCQTIyRTExRTM4QTc0QjdDRTVBQjMxNzg2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjM0M0UzMzlDQTIyRTExRTM4QTc0QjdDRTVBQjMxNzg2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jzOsUQAAANhJREFUeNqsks0KhCAUhW/Sz6pFSc1AD9HL+OBFbdsVOKWLajH9EE7GFBEjOMxcUNHD8dxPBCEE/DKyLGMqraoqcd4j0ChpUmlBEGCFRBzH2dbj5JycJAn90CEpy1J2SK4apVSM4yiKonhePYwxMU2TaJrm8BpykpWmKQ3D8FbX9SOO4/tOhDEG0zRhGAZo2xaiKDLyPGeSyPM8sCxr868+WC/mvu9j13XBtm1ACME8z7AsC/R9r0fGOf+arOu6jUwS7l6tT/B+xo+aDFRo5BykHfav3/gSYAAtIdQ1IT0puAAAAABJRU5ErkJggg=="
 
-}; 
+};
 
 // $('img.photo',this).imagesLoaded(myFunction)
 // execute a callback when all images have loaded.
@@ -1108,9 +1113,9 @@ $.fn.imagesLoaded = function(callback){
       blank = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
   elems.bind('load.imgloaded',function(){
-      if (--len <= 0 && this.src !== blank){ 
+      if (--len <= 0 && this.src !== blank){
         elems.unbind('load.imgloaded');
-        callback.call(elems,this); 
+        callback.call(elems,this);
       }
   }).each(function(){
      // cached images don't fire load sometimes, so we reset src.
@@ -1120,8 +1125,8 @@ $.fn.imagesLoaded = function(callback){
         // data uri bypasses webkit log warning (thx doug jones)
         this.src = blank;
         this.src = src;
-     }  
-  }); 
+     }
+  });
 
   return this;
 };
