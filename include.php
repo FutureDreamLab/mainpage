@@ -13,5 +13,5 @@ require_once 'page.func.php';
 require_once 'admin.inc.php';
 require_once 'cate.inc.php';
 require_once 'upload.func.php';
-ini_set("error_reporting","E_ALL & ~E_NOTICE");
+// ini_set("error_reporting","E_ALL & ~E_NOTICE");
 

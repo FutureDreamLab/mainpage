@@ -1,23 +1,35 @@
-<?php
+<?php 
 require_once '../include.php';
-$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
 $pageSize=2;
-$rows=getAdminByPage($link,$pageSize);
+$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
+$rows=getAdminByPage($page,$pageSize);
+//$sql="select * from imooc_admin";
+//$totalRows=getResultNum($sql);
+//$pageSize=2;
+//$totalPage=ceil($totalRows/$pageSize);
+//$pageSize=2;
+//$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
+//if($page<1||$page==null||!is_numeric($page)){
+//	$page=1;
+//}
+//if($page>=$totalPage)$page=$totalPage;
+//$offset=($page-1)*$pageSize;
+//$sql="select id,username,email from imooc_admin limit {$offset},{$pageSize}";
+//$rows=fetchAll($sql);
 
+//$rows=getAllAdmin();
 
 if(!$rows){
-    alertMes("sorry,没有管理员,请添加!","addAdmin.php");
-    exit;
+	alertMes("sorry,没有管理员,请添加!","addAdmin.php");
+	exit;
 }
-
-
-// ?>
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>-.-</title>
-<link rel="stylesheet" href="style/backstage.css">
+<link rel="stylesheet" href="styles/backstage.css">
 </head>
 
 <body>
@@ -26,7 +38,7 @@ if(!$rows){
                         <div class="bui_select">
                             <input type="button" value="添&nbsp;&nbsp;加" class="add"  onclick="addAdmin()">
                         </div>
-
+                            
                     </div>
                     <!--表格-->
                     <table class="table" cellspacing="0" cellpadding="0">
@@ -39,8 +51,7 @@ if(!$rows){
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($rows as $row):?>
-
+                        <?php  foreach($rows as $row):?>
                             <tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php echo $row['id'];?></label></td>
@@ -48,21 +59,20 @@ if(!$rows){
                                 <td><?php echo $row['email'];?></td>
                                 <td align="center"><input type="button" value="修改" class="btn" onclick="editAdmin(<?php echo $row['id'];?>)"><input type="button" value="删除" class="btn"  onclick="delAdmin(<?php echo $row['id'];?>)"></td>
                             </tr>
-                        <?php endforeach;?>
-                        <?php if($rows>$pageSize):?>
-                        <tr>
-                          <td colspan= "4" > <?php echo showPage($page, $totalPage)?> </td>
-                        </tr>
-                        <?php endif;?>
+                            <?php endforeach;?>
+                            <?php if($totalRows>$pageSize):?>
+                            <tr>
+                            	<td colspan="4"><?php echo showPage($page, $totalPage);?></td>
+                            </tr>
+                            <?php endif;?>
                         </tbody>
                     </table>
-
                 </div>
 </body>
 <script type="text/javascript">
 
 	function addAdmin(){
-		window.location="addAdmin.php";
+		window.location="addAdmin.php";	
 	}
 	function editAdmin(id){
 			window.location="editAdmin.php?id="+id;

@@ -1,21 +1,39 @@
-<?php
+<?php 
 require_once '../include.php';
+checkLogined();
 $act=$_REQUEST['act'];
 $id=$_REQUEST['id'];
 if($act=="logout"){
-    logout();
+	logout();
 }elseif($act=="addAdmin"){
-    $mes=addAdmin($link);
-}elseif ($act=="editAdmin"){
-    $mes=editAdmin($link,$id);
-}elseif ($act=="delAdmin"){
-    $mes=delAdmin($link,$id);
-}elseif ($act=="addCate"){
-    $mes=addCate($link);
-}elseif ($act=="editCate"){
-    $mes=editCate($link,$id);
-}elseif ($act=="delCate"){
-    $mes=delCate($link,$id);
+	$mes=addAdmin();
+}elseif($act=="editAdmin"){
+	$mes=editAdmin($id);
+}elseif($act=="delAdmin"){
+	$mes=delAdmin($id);
+}elseif($act=="addCate"){
+	$mes=addCate();
+}elseif($act=="editCate"){
+	$where="id={$id}";
+	$mes=editCate($where);
+}elseif($act=="delCate"){
+	$mes=delCate($id);
+}elseif($act=="addPro"){
+	$mes=addPro();
+}elseif($act=="editPro"){
+	$mes=editPro($id);
+}elseif($act=="delPro"){
+	$mes=delPro($id);
+}elseif($act=="addUser"){
+	$mes=addUser();
+}elseif($act=="delUser"){
+		$mes=delUser($id);
+}elseif($act=="editUser"){
+	$mes=editUser($id);	
+}elseif($act=="waterText"){
+	$mes=doWaterText($id);
+}elseif($act=="waterPic"){
+	$mes=doWaterPic($id);
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,7 +43,7 @@ if($act=="logout"){
 <title>Insert title here</title>
 </head>
 <body>
-<?php
+<?php 
 	if($mes){
 		echo $mes;
 	}

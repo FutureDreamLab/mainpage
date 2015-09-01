@@ -22,7 +22,7 @@ function verifyImage($type = 1,$length = 4,$pixel = 0,$line = 1,$sess_name = "ve
         $angle = mt_rand(- 15, 15);
         $x = 5 + $i * $size;
         $y = mt_rand(20, 26);
-        $fontfile = "../fonts/" . $fontfiles[mt_rand(0, count($fontfiles) - 1)];
+        $fontfile = "./fonts/" . $fontfiles[mt_rand(0, count($fontfiles) - 1)];
         $color = imagecolorallocate($image, mt_rand(50, 130), mt_rand(50, 130), mt_rand(50, 130));
         $text = substr($chars, $i, 1);
         imagettftext($image, $size, $angle, $x, $y, $color, $fontfile, $text);
@@ -47,3 +47,5 @@ function verifyImage($type = 1,$length = 4,$pixel = 0,$line = 1,$sess_name = "ve
     imagedestroy($image);
 }
 
+
+// verifyImage();

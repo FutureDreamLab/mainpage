@@ -1,11 +1,9 @@
-<?php
+<?php 
 require_once '../include.php';
 $id=$_REQUEST['id'];
 $sql="select id,username,password,email from imooc_admin where id='{$id}'";
-$row=fetchOne($link, $sql);
+$row=fetchOne($sql);
 ?>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,7 +20,7 @@ $row=fetchOne($link, $sql);
 	</tr>
 	<tr>
 		<td align="right">管理员密码</td>
-		<td><input type="password" name="password" value="<?php echo $row['password'];?>"/></td>
+		<td><input type="password" name="password"  value="<?php echo $row['password'];?>"/></td>
 	</tr>
 	<tr>
 		<td align="right">管理员邮箱</td>

@@ -1,0 +1,102 @@
+﻿.navbar{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+	.navbar-header{
+	padding-bottom: 10px;
+	}
+	.navbar-nav{
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	}
+	.login{
+	text-align:center;
+	margin-left:10px;
+	color:#fff;
+	}
+	.reg{
+	text-align:center;
+	margin-left:10px;
+	color:#fff;
+	}
+	.login-box{
+	width: 300px;
+	margin:0 auto;
+	overflow-x: hidden;
+}
+.sign-in , .login-in{
+	width: 300px;
+	padding: 0 10px;
+}
+.box-size{
+	width:800px;
+	height:300px;
+	margin-left:0px;
+}
+.guodu{
+
+	transition:all 0.3s ease-out;
+	-webkit-transition:all 0.3s ease-out;
+	-moz-transition:all 0.3s ease-out;
+	-o-transition:all 0.3s ease-out;
+}
+@media (max-width: 767px){
+	.liuyanms{
+	text-align:right;
+	}
+	}
+	@media (min-width: 767px){
+	.liuyanms{
+	text-align:right;
+	padding-top:60px;
+	}
+	}
+	.footer{
+	padding-top:30px;
+	padding-bottom:30px;
+	}
+	.information{
+	text-align:center;
+	margin-top:30px;
+	}
+	.zhuce{
+	color: #fff;
+	font-size: 18px;
+	text-align: left;
+	}
+	.zhuce:active,.zhuce:hover {
+	color: #333333;
+	}
+	.zhuce:focus,.zhuce:hover {
+	color: #333333;
+	}
+	    .yanse {
+}
+    .sizeclose {
+	font-size: 30px;
+}
+    .noreg {
+	text-align: right;
+}
+    .forgetpassword {
+	position: relative;
+	left: 0px;
+	bottom: 0px;
+	top: 20px;
+	;
+}
+.form-signin-heading{
+margin-top:0px;
+margin-bottom:20px;
+}
+.form-signin{
+padding-bottom:10px;
+}
+@font-face {
+  font-family: 'NotoSansHans-Regular';
+src: url('../fonts/NotoSansHans-Regular.otf');
+  src: url('../fonts/NotoSansHans-Regular.otf') format('embedded-opentype');
+  
+}
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;}

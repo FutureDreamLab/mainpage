@@ -1,11 +1,8 @@
-<?php
+<?php 
 require_once '../include.php';
 $id=$_REQUEST['id'];
-$sql="select id,cName from imooc_cate where id='{$id}'";
-$row=fetchOne($link, $sql);
+$row=getCateById($id);
 ?>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
