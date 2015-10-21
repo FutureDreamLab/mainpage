@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>我的订单</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/same.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+	.order-progress{
+	padding: 20px 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	}
+	.shopping_tit a{
+	float:right;
+	font-size:14px;
+	margin-right:30px;
+	}
+		.jiesuan{
+	padding:30px 20px;
+	background-color: #eeeeee;
+	text-align:right;
+	margin-bottom:30px;
+	}
+	.money{
+	color:red;
+	font-size:24px;
+	}
+	.shopping_item{
+	margin:20px 0px;
+	padding:10px 10px;
+	}
+	.shopping-paymethod{
+	padding:10px 30px;
+	}
+	.shopping-list{
+	
+	padding:10px 30px;
+	}
+	.shopping-address{
+		padding:10px 0px;
+		}
+		.error1{
+		display:none;
+		padding-top:5px;
+		color:red;
+		}
+    </style>
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+<!-- 插入导航-->
+<?php
+require_once './header.php';
+?>
+   
+<div class="container"><!-- 地址填写 -->
+<div class="order-header">
+<ol class="breadcrumb">
+  <li><a href="index.php">首页</a></li>
+  <li><a href="index.php">我的订单</a></li>
+  <li class="active">填写地址</li>
+</ol>
+</div>
+<div class="order-progress">
+<img src="images/step12.png" class="img-responsive center-block" alt="Responsive image">
+</div>
+	<div class="shopping_item">
+		<h3 class="shopping_tit">收货地址</h3>
+		<div class="shopping-address">
+		<form class="form-horizontal">
+  <div class="form-group">
+    <label for="address1" class="col-sm-2 control-label"><span style="color:red;">*</span> 选择地区：</label>
+    <div class="col-sm-4">
+      <select class="form-control">
+  <option>江苏省</option>
+  <option>安徽省</option>
+  <option>山东省</option>
+  <option>浙江省</option>
+  <option>福建省</option>
+</select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="address2" class="col-sm-2 control-label"><span style="color:red;">*</span> 详细地址：</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" rows="3" placeholder="建议填写正确地址，如街道号、门牌号" required="required" ></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="address3" class="col-sm-2 control-label"><span style="color:red;">*</span> 收货人：</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control" id="inputAdress3" placeholder="不超过10字" required="required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="address4" class="col-xs-12 col-sm-2 control-label"><span style="color:red;">*</span> 手机号码：</label>
+    <div class="col-xs-5  col-sm-2">
+   <select class="form-control">
+  <option>大陆+86</option>
+  <option>香港+852</option>
+  <option>台湾+856</option>
+</select>
+    </div>
+	<div class="col-xs-7 col-sm-3">
+      <input type="text" class="form-control " id="phone" placeholder="请输入手机号码" required="required">
+    </div>
+	<div class=" col-sm-3 ">
+	<p class="error1">填写手机号</p>
+    </div>
+	
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success">确认收货地址</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+<div class="shopping_item">
+<h3 class="shopping_tit">支付方式</h3>
+<div class="shopping-paymethod">
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    支付宝支付
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    微信支付
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+    网上银行
+  </label>
+</div>
+</div>
+</div>
+<div class="shopping_item">
+<h3 class="shopping_tit">商品清单<a href="order.php">返回购物车修改</a></h3>
+<div class="shopping-list">
+<table class="table table-hover">
+ <thead>
+ <tr>
+ <th>商品名称</th>
+ <th>单价（元）</th>
+ <th>数量</th>
+ <th>小计</th>
+ </tr>
+ <tbody>
+ <tr>
+ <td><img src="images/11.png"><p>达维恩古代之行动画</p></td>
+ <td>60.00</td>
+ <td>1</td>
+ <td>60.00</td>
+ </tr>
+  <tr>
+ <td><img src="images/12.png"><p>达维恩古代之行真人视频</p></td>
+ <td>60.00</td>
+ <td>1</td>
+ <td>60.00</td>
+ </tr>
+ </tbody>
+ </thead>
+</table>
+<div class="jiesuan">
+<div class="row">
+<div class="col-lg-9">
+<p>总计：<span class="money">120</span> 元</p>
+</div>
+<div class=" col-lg-3">
+<a class="btn btn-primary btn-lg" href="address.php" role="button">提交订单</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--插入页脚-->
+<?php
+require_once './footer.php';
+?>
+   
+  </body>
+  <script type="text/javascript">
+$("#phone").blur(function(){
+		reg=/^1[3|4|5|8][0-9]\d{4,8}$/i;//验证手机正则(输入前7位至11位)
+
+		if( $("#phone").val()=="")
+		{ 	$(".error1").text("没有填写");
+			$(".error1").css("display","block");
+			 $(".error1").css("color","red");
+		}
+		else if($("#phone").val().length==11)
+        {   
+              $(".error1").text("正确");
+			$(".error1").css("color","#9BBA1F");
+		$(".error1").css("display","block");
+        }
+        else 
+        {   
+		$(".error1").text("手机号长度有误！");
+            $(".error1").css("display","block");
+          $(".error1").css("color","red");
+		
+        }
+	});
+  </script>
+     <script type="text/javascript">
+			$(".to-signup").on("click",function(){
+				$(".box-size").css("margin-left","0px")
+			});
+			$(".to-login").on("click",function(){
+				$(".box-size").css("margin-left","-300px")
+			});
+			$("#login").on("click",function(){
+				$(".box-size").css("margin-left","-300px")
+			});
+			$("#reg").on("click",function(){
+				$(".box-size").css("margin-left","0px")
+			});
+</script>
+</html>
